@@ -22,6 +22,13 @@ grpc:
     pool:
       numWorkers: 4
 
+metrics:
+  address: 127.0.0.1:2112
+
+# health check
+status:
+  address: 127.0.0.1:2114
+
 # hot reload
 reload:
   # 間隔幾秒更新
@@ -41,3 +48,9 @@ reload:
         - .php
       dirs:
         - .
+
+logs:
+  # 預設模式
+  mode: development
+  # 預設模式
+  output: stderr

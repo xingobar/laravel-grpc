@@ -23,7 +23,7 @@ class UserService implements UserServiceInterface
     {
         $user = new User();
         $user->setEmail('test@gmail.com');
-        $user->setId(100);
+        $user->setId(102);
         $user->setName('test');
         $user->setCreatedAt(now()->format('Y-m-d H:i:s'));
         $user->setUpdatedAt(now()->format('Y-m-d H:i:s'));

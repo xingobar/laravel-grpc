@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cb573d6a420a55660144d9c6297dfbe",
+    "content-hash": "3ddd28d010d8ddc69236123caacadc36",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3643,6 +3643,65 @@
                 "source": "https://github.com/spiral/roadrunner-laravel"
             },
             "time": "2022-02-12T11:14:22+00:00"
+        },
+        {
+            "name": "spiral/roadrunner-metrics",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spiral/roadrunner-metrics.git",
+                "reference": "256c121e0b33f445775a4d840ed5a72c558abcba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spiral/roadrunner-metrics/zipball/256c121e0b33f445775a4d840ed5a72c558abcba",
+                "reference": "256c121e0b33f445775a4d840ed5a72c558abcba",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "spiral/goridge": "^3.0",
+                "symfony/polyfill-php80": "^1.22"
+            },
+            "require-dev": {
+                "jetbrains/phpstorm-attributes": "^1.0",
+                "phpunit/phpunit": "~8.0",
+                "vimeo/psalm": "^4.4"
+            },
+            "suggest": {
+                "spiral/roadrunner-cli": "Provides RoadRunner installation and management CLI tools"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spiral\\RoadRunner\\Metrics\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Titov (wolfy-j)",
+                    "email": "wolfy-j@spiralscout.com"
+                },
+                {
+                    "name": "RoadRunner Community",
+                    "homepage": "https://github.com/spiral/roadrunner/graphs/contributors"
+                }
+            ],
+            "description": "RoadRunner: Prometheus metrics RPC",
+            "support": {
+                "issues": "https://github.com/spiral/roadrunner-metrics/issues",
+                "source": "https://github.com/spiral/roadrunner-metrics/tree/v2.0.1"
+            },
+            "time": "2021-02-18T17:53:39+00:00"
         },
         {
             "name": "spiral/roadrunner-worker",
