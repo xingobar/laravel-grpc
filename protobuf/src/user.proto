@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package mypackage;
+package protobuf.mypackage;
 
 service UserService {
     rpc getUser(UserRequest) returns(User) {}

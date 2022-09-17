@@ -4,9 +4,9 @@
 namespace App\Services;
 
 
-use Mypackage\User;
-use Mypackage\UserRequest;
-use Mypackage\UserServiceInterface;
+use Protobuf\Mypackage\User;
+use Protobuf\Mypackage\UserRequest;
+use Protobuf\Mypackage\UserServiceInterface;
 use Spiral\GRPC;
 
 class UserService implements UserServiceInterface

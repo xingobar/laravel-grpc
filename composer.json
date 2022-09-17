@@ -32,8 +32,8 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "Mypackage\\": "protobuf/build/Mypackage/",
-            "": "protobuf/build/"
+            "Protobuf\\": "protobuf/build/Protobuf",
+            "GPBMetadata\\": "protobuf/build/GPBMetadata/"
         }
     },
     "autoload-dev": {
