@@ -1,0 +1,43 @@
+version: "2.7"
+
+# 啟用 grpc woker
+server:
+  command: "php worker.php"
+
+http:
+  address: 0.0.0.0:8080
+  pool:
+    num_workers: 4
+
+rpc:
+  enable: true
+  listen: tcp://127.0.0.1:6001
+
+grpc:
+  listen: tcp://0.0.0.0:8001
+  # 使用哪些 protocol buffers
+  proto:
+    - "protobuf/src/user.proto"
+  workers:
+    pool:
+      numWorkers: 4
+
+# hot reload
+reload:
+  # 間隔幾秒更新
+  interval: 1s
+  # 全域的檔案格式
+  patterns:
+    - .php
+  # 哪些服務要 reload
+  services:
+    grpc:
+      # recursive 搜尋檔案格式
+      recursive: true
+      # 忽略哪些資料夾
+      ignore:
+        - vendor
+      patterns:
+        - .php
+      dirs:
+        - .
