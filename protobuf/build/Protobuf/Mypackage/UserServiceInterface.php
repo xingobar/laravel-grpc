@@ -19,4 +19,13 @@ interface UserServiceInterface extends GRPC\ServiceInterface
     * @throws GRPC\Exception\InvokeException
     */
     public function getUser(GRPC\ContextInterface $ctx, UserRequest $in): User;
+
+    /**
+    * @param GRPC\ContextInterface $ctx
+    * @param UserRequest $in
+    * @return UsersResponse
+    *
+    * @throws GRPC\Exception\InvokeException
+    */
+    public function getUsers(GRPC\ContextInterface $ctx, UserRequest $in): UsersResponse;
 }

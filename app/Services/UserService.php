@@ -4,14 +4,19 @@
 namespace App\Services;
 
 
+use Google\Protobuf\Internal\GPBType;
+use Google\Protobuf\Internal\RepeatedField;
+use Grpc\ServerCallWriter;
+use Grpc\ServerContext;
 use Protobuf\Mypackage\User;
 use Protobuf\Mypackage\UserRequest;
 use Protobuf\Mypackage\UserServiceInterface;
+use Protobuf\Mypackage\UsersResponse;
 use Spiral\GRPC;
+use Spiral\RoadRunner\Payload;
 
 class UserService implements UserServiceInterface
 {
-
     /**
      * @param GRPC\ContextInterface $ctx
      * @param UserRequest $in
@@ -29,5 +34,26 @@ class UserService implements UserServiceInterface
         $user->setUpdatedAt(now()->format('Y-m-d H:i:s'));
 
         return $user;
+    }
+
+    public function getUsers( GRPC\ContextInterface $ctx, UserRequest $in): UsersResponse
+    {
+        $usersResponse = new UsersResponse();
+        $users = [];
+
+        foreach(range(1, 10 ) as $index) {
+            $user = new User();
+            $user->setEmail('test@gmail.com');
+            $user->setId($index);
+            $user->setName('test');
+            $user->setCreatedAt(now()->format('Y-m-d H:i:s'));
+            $user->setUpdatedAt(now()->format('Y-m-d H:i:s'));
+
+            $users[] =  $user;
+        }
+
+        $usersResponse->setUsers($users);
+
+        return $usersResponse;
     }
 }

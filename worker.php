@@ -12,8 +12,11 @@ $app->make(Kernel::class)->bootstrap();
 
 /** 加入 gRPC Server 物件 */
 $server = $app->make(\Spiral\GRPC\Server::class, [ ['debug' => true]]);
+
 /** 註冊想要的服務 */
 $server->registerService(\Protobuf\Mypackage\UserServiceInterface::class, new \App\Services\UserService());
+
 /** 啟始 worker */
 $worker = new  Spiral\RoadRunner\Worker(new Spiral\Goridge\StreamRelay(STDIN, STDOUT));
+
 $server->serve($worker);
