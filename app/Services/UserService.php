@@ -4,16 +4,11 @@
 namespace App\Services;
 
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
-use Grpc\ServerCallWriter;
-use Grpc\ServerContext;
 use Protobuf\Mypackage\User;
 use Protobuf\Mypackage\UserRequest;
 use Protobuf\Mypackage\UserServiceInterface;
 use Protobuf\Mypackage\UsersResponse;
 use Spiral\GRPC;
-use Spiral\RoadRunner\Payload;
 
 class UserService implements UserServiceInterface
 {

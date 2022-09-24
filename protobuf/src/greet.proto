@@ -1,13 +1,19 @@
 syntax = "proto3";
-package poyu.grpc;
-service ExampleService {
-    rpc Calculate(ExampleRequest) returns (ExampleResponse) {}
+
+package protobuf.greet;
+
+message User {
+    uint32 id = 1;
+    string name = 2;
 }
-message ExampleRequest {
-    uint64 a = 1;
-    uint64 b = 2;
-    string op = 3;
+
+message GreetResponse {
+    User user = 1;
 }
-message ExampleResponse {
-    uint64 c = 1;
+
+message GreetRequest {}
+
+
+service GreetService {
+    rpc greet(GreetRequest) returns(GreetResponse) {}
 }
