@@ -4,10 +4,10 @@
 namespace App\Services;
 
 
+use Google\Protobuf\GPBEmpty;
 use Protobuf\Greet\GreetRequest;
 use Protobuf\Greet\GreetResponse;
 use Protobuf\Greet\GreetServiceInterface;
-use Protobuf\Greet\User;
 use Spiral\GRPC;
 
 class GreetService implements GreetServiceInterface
@@ -20,11 +20,11 @@ class GreetService implements GreetServiceInterface
      *
      * @throws GRPC\Exception\InvokeException
      */
-    public function greet(GRPC\ContextInterface $ctx, GreetRequest $in): GreetResponse
+    public function greet(GRPC\ContextInterface $ctx, GPBEmpty $in): GreetResponse
     {
         $response = new GreetResponse();
 
-        $user = new User();
+        $user = new \Protobuf\Messages\User();
         $user->setId(100);
         $user->setName('hello world');
 

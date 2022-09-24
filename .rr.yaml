@@ -19,6 +19,7 @@ grpc:
   proto:
     - "protobuf/src/user.proto"
     - "protobuf/src/greet.proto"
+    - "protobuf/src/messages/user.proto"
   workers:
     pool:
       numWorkers: 4

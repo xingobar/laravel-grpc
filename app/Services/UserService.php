@@ -4,7 +4,7 @@
 namespace App\Services;
 
 
-use Protobuf\Mypackage\User;
+use Protobuf\Messages\User;
 use Protobuf\Mypackage\UserRequest;
 use Protobuf\Mypackage\UserServiceInterface;
 use Protobuf\Mypackage\UsersResponse;

@@ -5,6 +5,7 @@
 namespace Protobuf\Mypackage;
 
 use Spiral\GRPC;
+use Protobuf\Messages;
 
 interface UserServiceInterface extends GRPC\ServiceInterface
 {
@@ -14,11 +15,11 @@ interface UserServiceInterface extends GRPC\ServiceInterface
     /**
     * @param GRPC\ContextInterface $ctx
     * @param UserRequest $in
-    * @return User
+    * @return Messages\User
     *
     * @throws GRPC\Exception\InvokeException
     */
-    public function getUser(GRPC\ContextInterface $ctx, UserRequest $in): User;
+    public function getUser(GRPC\ContextInterface $ctx, UserRequest $in): Messages\User;
 
     /**
     * @param GRPC\ContextInterface $ctx

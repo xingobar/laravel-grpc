@@ -5,6 +5,7 @@
 namespace Protobuf\Greet;
 
 use Spiral\GRPC;
+use Google\Protobuf;
 
 interface GreetServiceInterface extends GRPC\ServiceInterface
 {
@@ -13,10 +14,10 @@ interface GreetServiceInterface extends GRPC\ServiceInterface
 
     /**
     * @param GRPC\ContextInterface $ctx
-    * @param GreetRequest $in
+    * @param Protobuf\GPBEmpty $in
     * @return GreetResponse
     *
     * @throws GRPC\Exception\InvokeException
     */
-    public function greet(GRPC\ContextInterface $ctx, GreetRequest $in): GreetResponse;
+    public function greet(GRPC\ContextInterface $ctx, Protobuf\GPBEmpty $in): GreetResponse;
 }
