@@ -6,6 +6,7 @@ namespace App\Services;
 
 use Protobuf\Messages\User;
 use Protobuf\Mypackage\UserRequest;
+use Protobuf\Mypackage\Users;
 use Protobuf\Mypackage\UserServiceInterface;
 use Protobuf\Mypackage\UsersResponse;
 use Spiral\GRPC;
@@ -34,7 +35,8 @@ class UserService implements UserServiceInterface
     public function getUsers( GRPC\ContextInterface $ctx, UserRequest $in): UsersResponse
     {
         $usersResponse = new UsersResponse();
-        $users = [];
+        $users = new Users();
+        $array = [];
 
         foreach(range(1, 10 ) as $index) {
             $user = new User();
@@ -43,11 +45,12 @@ class UserService implements UserServiceInterface
             $user->setName('test');
             $user->setCreatedAt(now()->format('Y-m-d H:i:s'));
             $user->setUpdatedAt(now()->format('Y-m-d H:i:s'));
-
-            $users[] =  $user;
+            $array[] =  $user;
         }
 
-        $usersResponse->setUsers($users);
+        $users->setUsers($array);
+
+        $usersResponse->setData($users);
 
         return $usersResponse;
     }
